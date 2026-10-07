@@ -1,0 +1,266 @@
+body{
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
+}
+
+nav{
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+    width: 15%;
+    line-height: 20px;
+    position: fixed;
+}
+
+nav a{
+    text-decoration: underline;
+    color: darkblue;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+}
+
+nav a:hover {
+    color: gold;
+}
+
+
+
+#wrapper {
+    margin-top: 50px;
+    width: 60%;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+header img{
+    width: 100%;
+    height: auto;
+}
+
+header h1{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: darkblue;
+}
+
+header h2{
+    margin-top: 0px;
+    margin-bottom: 34px;
+    text-align: center;
+    font-size: 30px;
+    color: blue;
+}
+
+header h3{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 24px;
+    color: lightskyblue;
+}
+
+section{
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+article h3{
+    margin-bottom: 10px;
+    color: lightskyblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+/* Version 2
+.books {
+    display: grid;
+    grid-template-columns: auto
+    auto auto;
+    max-width: 100%;
+    height: auto;
+    gap: 16px;
+}
+*/
+
+/* Version 2
+.books {
+    display: grid;
+    grid-template-columns: repeat (3, 1fr);
+    max-width: 100%;
+    gap: 16px;
+}
+*/
+
+.framed-photo {
+    border: 200px solid #333333; /* 5 pixels thick, solid, dark gray */
+}
+
+.books img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.books{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.books img{
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.books figure{
+    margin: 0;
+    color: darkblue
+}
+
+article figure figcaption{
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 60px;
+    min-height: 30px;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: right;
+    font-style: italic;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-style: bold
+}
+
+/* Tablet
+Up to 900px */
+
+@media (max-width: 900px) {
+
+    #wrapper {
+        width: 70%;
+        margin-right: 30px;
+    }
+
+    nav {
+        margin-left: 30px;
+        width: 20%;
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1 fr);
+    }
+}
+
+/* MOBILE Up to 600px*/
+
+@media (max-width: 600px) {
+
+    /* Navigation becomes a normal horizontal mobile bar */
+    nav {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 0 40px 0;
+        padding: 10px 5px;
+
+        position: relative;
+        float: none;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+       
+        line-height: 30px;
+
+        background: black;
+        border-bottom: 4px solid black;
+
+        z-index: 1000;
+    }
+
+    nav a {
+        color: cyan;
+    }
+    nav a:hover {
+        color: lightyellow;
+    }
+
+    /* Devices that actually support hover */
+
+    @media (hover: hover){
+        nav a:hover {
+            color: gold;
+        }
+    }
+
+    /* Touch Interaction */
+
+    nav a:active {
+        background: darkgrey;
+    }
+
+    /* Main Content */
+
+    #wrapper {
+        width: 92%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    /* Headers */
+    header h1{
+        text-align: right;
+        font-size: 23px;
+        margin-top: 40px;
+    }
+
+    header h2{
+        text-align: right;
+        font-size: 23px;
+    }
+
+    header h3{
+        font-size: 18px;
+    }
+
+    .books{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    footer{
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+
+}
+
+/* Very Small Phones - Up to 400px */
+@media (max-width: 400px) {
+    nav {
+        padding: 8px 0;
+    }
+    #wrapper {
+        width: 94%;
+    }
+
+    .books {
+        gap: 12px;
+    }
+
+    article figure figcaption {
+        font-size: 11px;
+    }
+}
